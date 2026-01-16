@@ -288,7 +288,8 @@
         .song-select {
             padding: 8px 12px;
             border-radius: 20px;
-            border: 2px solid white; /* Adding a white border to match profile pic style */
+            border: 2px solid white;
+            /* Adding a white border to match profile pic style */
             background: rgba(255, 255, 255, 0.95);
             font-family: 'Poppins', sans-serif;
             font-size: 0.9rem;
@@ -464,7 +465,7 @@
 
     <div class="music-controls">
         <select id="songSelect" class="song-select" title="Seleccionar Canción">
-            <option value="assets/musica.mp3">Música Chill</option>
+            <option value="assets/musica.mp3">Engel</option>
             <option value="assets/el jp .mp3">El JP</option>
         </select>
         <button id="musicBtn" class="music-btn" title="Reproducir Música">
@@ -497,7 +498,7 @@
         selector.addEventListener('change', (e) => {
             const wasPlaying = !music.paused;
             music.src = e.target.value;
-            
+
             if (wasPlaying) {
                 music.play().catch(e => console.log("Switch play error:", e));
             } else {
