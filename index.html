@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Pablo "JP" Alcaraz Mesina</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Palette: Clean, Youthful, Relaxed */
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --accent-color: #4cc9f0;
+            --secondary-text: #666;
+            --card-bg: #fff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s forwards;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            color: #222;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Subtle underline decoration for headers */
+        h2::after {
+            content: '';
+            display: block;
+            width: 40%;
+            height: 4px;
+            background: var(--accent-color);
+            margin-top: 5px;
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 100px 0 60px 0;
+            animation-delay: 0.1s;
+        }
+
+        .greeting {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 300;
+        }
+
+        .name {
+            font-size: 3.5rem;
+            margin: 0 0 20px 0;
+            color: #111;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            background: #e6f7ff;
+            color: #0077b6;
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            text-align: center;
+            border-top: 4px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--secondary-text);
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            color: var(--secondary-text);
+            font-size: 1.1rem;
+            font-style: italic;
+            border-top: 1px solid #eee;
+            margin-top: 60px;
+        }
+
+        /* Images */
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(76, 201, 240, 0.3);
+            border: 4px solid white;
+        }
+
+        .context-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .context-text {
+            /* Text column */
+        }
+
+        .context-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .context-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Responsive adjustments for imagery */
+        @media (max-width: 700px) {
+            .context-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .context-grid.reverse {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Staggered Animations */
+        section:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        section:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+
+        /* Collage - New Subsection */
+        .collage-container {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px dashed #ddd;
+            /* Subtle separation */
+        }
+
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .collage-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            filter: grayscale(20%);
+            /* Artistic touch */
+        }
+
+        .collage-grid img:hover {
+            transform: translateY(-5px);
+            filter: grayscale(0%);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            filter: grayscale(0%);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Music Button */
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(76, 201, 240, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s, background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+            background: #3db5dc;
+        }
+
+        .music-btn.playing {
+            animation: pulse-music 2s infinite;
+        }
+
+        @keyframes pulse-music {
+            0% {
+                box-shadow: 0 0 0 0 rgba(76, 201, 240, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(76, 201, 240, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(76, 201, 240, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <span class="greeting">Hola 👋</span>
+            <!-- Profile Picture Placeholder -->
+            <img src="assets/perfil.jpg" alt="JP Alcaraz" class="profile-pic"
+                onerror="this.src='https://via.placeholder.com/200?text=JP'">
+
+            <h1 class="name">Juan Pablo “JP”<br>Alcaraz Mesina</h1>
+            <div class="subtitle">Estudiante de preparatoria | Aprendiendo y aprovechando oportunidades</div>
+        </section>
+
+        <!-- Contexto -->
+        <section>
+            <h2>Un poco de contexto</h2>
+            <p>
+                Hola, yo soy Juan Pablo Alcaraz Mesina, pero todos me dicen <strong>JP</strong>.
+                Tengo 16 años, soy de Manzanillo, Colima, y actualmente voy en 4º semestre de preparatoria.
+            </p>
+
+            <!-- Sports Block -->
+            <div class="context-grid">
+                <div class="context-text">
+                    <p>
+                        Crecí en Manzanillo, donde mi vida se divide entre la escuela y el deporte.
+                        Entreno basquetbol y también juego volibol.
+                    </p>
+                </div>
+                <div class="context-image">
+                    <img src="assets/deportes.jpg" alt="Deportes"
+                        onerror="this.src='https://via.placeholder.com/400x300?text=Deportes'">
+                </div>
+            </div>
+
+            <!-- Friends/School Block (New) -->
+            <div class="context-grid reverse">
+                <div class="context-image">
+                    <img src="assets/amigos.jpg" alt="Mis Amigos y Escuela"
+                        onerror="this.src='https://via.placeholder.com/400x300?text=Amigos'">
+                </div>
+                <div class="context-text">
+                    <p>
+                        Disfruto mucho compartir tiempo con mis amigos, ya sea en la escuela o fuera de ella.
+                        Creo que rodearse de buenas personas es clave para crecer.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Transport Block -->
+            <div class="context-grid">
+                <div class="context-text">
+                    <p>
+                        Mi familia se dedica al transporte, y en Manzanillo contamos con un patio de pensión,
+                        maniobras y desycom llamado <strong>CRET</strong>, por lo que desde chico
+                        he estado rodeado de este mundo.
+                    </p>
+                </div>
+                <div class="context-image">
+                    <img src="assets/trailers.jpg" alt="Transporte / Trailers"
+                        onerror="this.src='https://via.placeholder.com/400x300?text=Trailers'">
+                </div>
+            </div>
+        </section>
+
+        <!-- VAX -->
+        <section>
+            <h2>¿Por qué estoy aquí en VAX?</h2>
+            <p>
+                Actualmente estoy en Guadalajara, viviendo con uno de mis hermanos mayores,
+                gracias a la oportunidad que se me presentó de venir a VAX a aprender.
+            </p>
+            <p>
+                Vine porque se nos ofreció esta experiencia, y quiero agradecer especialmente
+                al señor <strong>Chaim</strong> y a todo el equipo, ya que desde el primer día han sido muy
+                amables y receptivos conmigo, algo que valoro mucho.
+            </p>
+        </section>
+
+        <!-- Aprendizaje -->
+        <section>
+            <h2>Qué busco aprender</h2>
+            <p>
+                Quiero aprender todo lo que me puedan enseñar. Creo firmemente que nunca es
+                demasiado conocimiento, y que esa mentalidad es clave para crecer, sobre todo a mi edad.
+            </p>
+            <p>
+                Me gusta observar, preguntar y entender cómo funcionan las cosas en la vida real,
+                no solo en la escuela.
+            </p>
+        </section>
+
+
+
+        <!-- Footer -->
+        <footer>
+            <p>“Estoy aquí para absorber lo más posible, crecer y aportar en lo que pueda.”</p>
+
+            <!-- Visual Collage (New Subsection) -->
+            <div class="collage-container">
+                <div class="collage-grid">
+                    <img src="assets/collage1.jpg" alt="Momento Personal">
+                    <img src="assets/collage2.jpg" alt="Explorando">
+                    <img src="assets/collage3.jpg" alt="Logro Deportivo">
+                    <img src="assets/collage4.jpg" alt="Volleyball">
+                    <img src="assets/collage5.jpg" alt="Casual">
+                    <img src="assets/collage6.jpg" alt="Mirror Selfie">
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Music Player -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="assets/musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicBtn" class="music-btn" title="Reproducir Música">
+        🎵
+    </button>
+
+    <script>
+        const music = document.getElementById('bgMusic');
+        const btn = document.getElementById('musicBtn');
+
+        btn.addEventListener('click', () => {
+            if (music.paused) {
+                music.play().catch(e => console.log("Audio play error:", e));
+                btn.textContent = '⏸';
+                btn.classList.add('playing');
+            } else {
+                music.pause();
+                btn.textContent = '🎵';
+                btn.classList.remove('playing');
+            }
+        });
+    </script>
+</body>
+
+</html>
